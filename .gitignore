@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+hard-hat-universe.v1-1.yolov8/
+hard-hat-universe.v1-1.yolov8.zip
+runs/
+yolov8n.pt
