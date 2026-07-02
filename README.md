@@ -13,8 +13,7 @@ full-stack integration.
 
 ## Dashboard Preview
 
-![PPE Detection Dashboard](assets/dashboard.png)
-
+![PPE Detection Dashboard](assets/dashboard.PNG)
 ---
 
 ## What it does
