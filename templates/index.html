@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PPE Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-icon">🛡</div>
+            <h1>PPE Detection Dashboard</h1>
+        </div>
+        <p class="subtitle">Real-time safety monitoring system — powered by YOLOv8 + OpenCV</p>
+
+        <!-- Status Cards -->
+        <div class="status-bar">
+            <div class="status-card">
+                <div class="label">System Status</div>
+                <div class="value green">● Active</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Model</div>
+                <div class="value blue">YOLOv8n</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Total Violations</div>
+                <div class="value amber">{{ violations|length }}</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Detection Target</div>
+                <div class="value">Helmet / Head</div>
+            </div>
+        </div>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <div class="feed-section">
+                <div class="section-title">Live Camera Feed</div>
+                <div class="feed-wrapper">
+                    <img src="{{ url_for('video_feed') }}">
+                    <div class="live-badge">
+                        <div class="live-dot"></div> LIVE
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-section">
+                <div class="section-title">Violation Log</div>
+                <table>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Violation</th>
+                    </tr>
+                    {% if violations %}
+                        {% for v in violations %}
+                        <tr>
+                            <td>{{ v['Timestamp'] }}</td>
+                            <td><span class="badge">{{ v['Violation Type'] }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="2" class="no-data">No violations logged yet</td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
