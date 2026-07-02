@@ -51,16 +51,27 @@ full-stack integration.
 ppe-detection/
 
 ├── app.py               # Flask dashboard
+
 ├── detect.py            # Real-time detection + alert system
+
 ├── train.py             # Model training script
+
 ├── best.pt              # Trained YOLOv8 model
+
 ├── test_camera.py       # Camera test utility
+
 ├── templates/
+
 │   └── index.html       # Dashboard HTML
+
 ├── static/
+
 │   └── style.css        # Dashboard styling
+
 ├── assets/
+
 │   └── dashboard.png    # Dashboard preview
+
 └── .env.example         # Credential template 
 
 ---
