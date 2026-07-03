@@ -138,4 +138,4 @@ Final results:
 
 **Tirangini**
 MCA Graduate (Degree Awaited) — Babu Banarasi Das University, Lucknow  
-GitHub: https://github.com/Tirangini
+GitHub: [Tirangini](https://github.com/Tirangini)
